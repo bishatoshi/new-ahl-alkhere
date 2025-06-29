@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>موقع أهل الخير النسوية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes zoomOut {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.vertical-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: zoomOut 0.4s ease;
+  position: relative;
+  z-index: 10;
+}
+
+    
+    .vertical-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 400px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.vertical-form input,
+.vertical-form select,
+.vertical-form button {
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to bottom, #e0ffe6, #a8e6cf);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #fffffffa;
+      color: #004d26;
+      padding: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-small {
+      height: 50px;
+      margin-left: 10px;
+      border-radius: 8px;
+      border: 2px solid white;
+    }
+    .login-container, .container, .user-view {
+      padding: 20px;
+      text-align: center;
+    }
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .login-box {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 300px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .password-wrapper i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+    }
+    button, .buttons a {
+      padding: 10px 20px;
+      background-color: #005522;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .announcement-box, .edit-section {
+      margin: 20px auto;
+      max-width: 600px;
+      background: #94fa7b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: right;
+    }
+    .edit-header {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .edit-header i {
+      margin-left: 10px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .announcements div {
+      background-color: #d4f5dc;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 600px;
+      font-size: 17px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .announcements div button {
+      background: none;
+      border: none;
+      color: red;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .user-view {
+      display: none;
+    }
+    .announcement {
+      background-color: #d4f5dc;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      font-size: 18px;
+      font-weight: bold;
+      color: #003311;
+      text-align: center;
+    }
+    .logo-container img {
+      border: 4px solid #004d26;
+      border-radius: 12px;
+      max-width: 250px;
+      height: auto;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 15px;
+    }
+    .buttons a {
+      background: linear-gradient(to right, #007bff, #0056b3);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .buttons a:hover {
+      background: linear-gradient(to right, #ff3333, #3db84d);
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 0, 212, 0.2);
+    }
+    #kafalaPage {
+      display: none;
+      padding: 20px;
+      text-align: right;
+    }
+    #kafalaPage input, #kafalaPage select {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    footer {
+      margin-top: 60px;
+      background-color: #3fdd8e;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- واجهة مشرفة الحرف -->
+<div id="letterSupervisorPanel" style="display:none; padding: 20px; text-align:right;">
+  <h2 id="letterWelcome">مرحباً، مشرفة الحرف</h2>
+  <div id="letterKafalaList">جاري تحميل الكفالات...</div>
+  <br>
+  <button onclick="logoutLetterSupervisor()" style="background-color: gray;">تسجيل خروج</button>
+</div>
+
+<div id="verifyPanel" style="display:none; padding: 20px; text-align: right;">
+  <h2>قسم التحقق من مشرفات الحروف</h2>
+  <div id="verifyList"></div>
+
+  <div class="edit-section">
+    <div class="edit-header"><i class="fa fa-user"></i><i class="fa fa-cog"></i> تغيير بيانات الدخول</div>
+    <input type="text" id="verifyNewUsername" placeholder="اسم المستخدم الجديد">
+    <input type="password" id="verifyNewPassword" placeholder="كلمة المرور الجديدة">
+    <button onclick="updateVerifyLogin()">تحديث البيانات</button>
+  </div>
+</div>
+
+
+
+<div class="login-container" id="loginSection">
+  <img src="https://i.imgur.com/WgyltwP.jpeg" alt="شعار المنظمة" style="border-radius: 8px; border: 3px solid #004d26;" width="251">
+  <div class="login-box">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <div class="password-wrapper">
+      <input type="password" id="password" placeholder="كلمة المرور">
+      <i class="fa fa-eye" onclick="togglePassword()"></i>
+    </div>
+    <button onclick="login()">دخول</button>
+    <br><br>
+    <button onclick="showUserView()">دخول كمستخدم</button>
+    <br><br>
+
+
+  </div>
+</div>
+<div id="letterSupervisorForm" class="vertical-form" style="display:none;">
+  <img src="https://i.imgur.com/WgyltwP.jpeg" alt="شعار المنظمة" style="width: 120px; border-radius: 8px; border: 3px solid #004d26; margin: auto; display: block; margin-bottom: 15px;">
+  <h2 style="text-align: center; margin-bottom: 20px;">تسجيل مشرفة حرف</h2>
+
+  <input id="letterSupervisor_username" placeholder="اسم المستخدم">
+  <input id="letterSupervisor_password" type="password" placeholder="كلمة المرور">
+  
+  <select id="letterSupervisor_letter">
+    <option disabled selected>اختر الحرف المشرفة عليه</option>
+    <option value="أ">أ</option>
+    <option value="ب">ب</option>
+    <option value="ت">ت</option>
+    <option value="ث">ث</option>
+    <option value="ج">ج</option>
+    <option value="ح">ح</option>
+    <option value="خ">خ</option>
+    <option value="د">د</option>
+    <option value="ذ">ذ</option>
+    <option value="ر">ر</option>
+    <option value="ز">ز</option>
+    <option value="س">س</option>
+    <option value="ش">ش</option>
+    <option value="ص">ص</option>
+    <option value="ض">ض</option>
+    <option value="ط">ط</option>
+    <option value="ظ">ظ</option>
+    <option value="ع">ع</option>
+    <option value="غ">غ</option>
+    <option value="ف">ف</option>
+    <option value="ق">ق</option>
+    <option value="ك">ك</option>
+    <option value="ل">ل</option>
+    <option value="م">م</option>
+    <option value="ن">ن</option>
+    <option value="هـ">هـ</option>
+    <option value="و">و</option>
+    <option value="ي">ي</option>
+  </select>
+
+  <select id="letterSupervisor_gender">
+    <option disabled selected>مشرفة على:</option>
+    <option value="رجال">رجال</option>
+    <option value="نساء">نساء</option>
+  </select>
+
+ <button onclick="submitLetterSupervisor()" style="background-color: #004d26;">إرسال</button>
+  <button onclick="backToLogin()" style="background-color: rgb(131, 5, 5);">رجوع</button>
+</div>
+
+
+
+
+
+<!-- قسم الإعلام -->
+<div style="display:none;" id="adminPanel">
+  <header>قسم الإعلام <img src="https://i.imgur.com/WgyltwP.jpeg" class="logo-small"></header>
+  <div class="container">
+    <div class="announcement-box">
+      <h2>الإعلانات</h2>
+      <textarea id="newAnnouncement" placeholder="اكتب الإعلان هنا..."></textarea><br>
+      <button onclick="addAnnouncement()">إضافة الإعلان</button>
+      <p id="limitMsg" style="color: red; font-weight: bold;"></p>
+    </div>
+    <div class="announcements" id="announcementList"></div>
+    <div class="edit-section">
+      <div class="edit-header"><i class="fa fa-user"></i><i class="fa fa-cog"></i> تغيير بيانات الدخول</div>
+      <input type="text" id="newUsername" placeholder="اسم المستخدم الجديد">
+      <input type="password" id="newPassword" placeholder="كلمة المرور الجديدة">
+      <button onclick="updateLogin()">تحديث البيانات</button>
+    </div>
+  </div>
+</div>
+
+<!-- صفحة المستخدم -->
+<div class="user-view" id="userPanel">
+  <header>منظمة أهل الخير النسوية</header>
+  <div class="announcement" id="userAnnouncements">جاري تحميل الإعلانات...</div>
+  <div class="logo-container">
+    <img src="https://i.imgur.com/WgyltwP.jpeg" alt="شعار المنظمة">
+  </div>
+  <div class="buttons">
+    <a href="https://www.tiktok.com/@ahlalkheir1" target="_blank">تيك توك</a>
+    <a href="https://www.facebook.com/ahl.alkhir.3" target="_blank">فيسبوك</a>
+    <a href="https://www.chatbase.co/chatbot-iframe/BkJ7ITdQa_AlVr3tZsXqB" target="_blank">الذكاء الصناعي</a>
+    <a href="https://wa.me/+249123161564" target="_blank">اتصل بنا</a>
+    <a onclick="goToKafalaPage()" style="cursor:pointer;">كفالة يتيم</a>
+  </div>
+</div>
+
+<!-- استمارة كفالة اليتيم -->
+<div id="kafalaPage">
+  <h2>استمارة كفالة يتيم</h2>
+  <input id="kafala_name" placeholder="اسم الكفيل">
+  <input id="kafala_email" placeholder="البريد الإلكتروني">
+  <input id="kafala_phone" placeholder="رقم الهاتف">
+  <input id="kafala_phone2" placeholder="رقم الهاتف الاحتياطي">
+  <input id="kafala_job" placeholder="الوظيفة">
+  <input id="kafala_degree" placeholder="الدرجة العلمية">
+  <input id="kafala_time" placeholder=" تاريخ النضمام">
+  <select id="kafala_orphans">
+    <option enabel selected>عدد الأيتام</option>
+  </select>
+  <select id="kafala_period">
+    <option disabled selected>مدة الكفالة</option>
+    <option>شهر</option>
+    <option>سنة</option>
+    <option>أكثر من سنة</option>
+  </select>
+  <select id="kafala_gender" required>
+  <option value="" disabled selected>اختر جنس</option>
+  <option value="رجال">رجل</option>
+  <option value="نساء">امرأة</option>
+</select>
+  <button onclick="submitKafala()">إرسال</button>
+  <button onclick="backToUser()" style="background-color: rgb(173, 18, 18);">رجوع</button>
+  <h2><strong>ملاحظة:</strong> توجد التزامات مثل كرتونة رمضان وفرحة العيدين</h2>
+  <h2> الرجاء اخطارنا قبل شهر في حالة الغاء الكفاله</h2>
+</div>
+
+<footer>&copy; 2025 منظمة أهل الخير النسوية</footer>
+
+<script>
+  if (!localStorage.getItem("letterSupervisors")) {
+  localStorage.setItem("letterSupervisors", "[]");
+}
+  function submitLetterSupervisor() {
+  // 1. الحصول على القيم من النموذج
+  const username = document.getElementById("letterSupervisor_username").value.trim();
+  const password = document.getElementById("letterSupervisor_password").value.trim();
+  const letter = document.getElementById("letterSupervisor_letter").value;
+  const gender = document.getElementById("letterSupervisor_gender").value;
+
+  // 2. التحقق من الحقول المطلوبة
+  if (!username || !password || !letter || !gender) {
+    alert("يجب تعبئة جميع الحقول المطلوبة");
+    return;
+  }
+
+  // 3. إنشاء كائن المشرفة الجديدة
+  const newSupervisor = {
+    username,
+    password,
+    letter,
+    gender,
+    verified: false,
+    registrationDate: new Date().toISOString()
+  };
+
+  try {
+    // 4. الحصول على البيانات الحالية
+    let supervisors = JSON.parse(localStorage.getItem("letterSupervisors") || "[]");
+    
+    // 5. التحقق من عدم وجود مستخدم بنفس الاسم
+    if (supervisors.some(s => s.username === username)) {
+      throw new Error("اسم المستخدم موجود بالفعل");
+    }
+
+    // 6. إضافة المشرفة الجديدة
+    supervisors.push(newSupervisor);
+    
+    // 7. حفظ البيانات
+    localStorage.setItem("letterSupervisors", JSON.stringify(supervisors));
+    
+    // 8. إظهار رسالة النجاح
+    alert("✅ تم تسجيل المشرفة بنجاح\nسيتم مراجعة الطلب من قبل المسؤول");
+    
+    // 9. إعادة تعيين النموذج
+    document.getElementById("letterSupervisor_username").value = "";
+    document.getElementById("letterSupervisor_password").value = "";
+    document.getElementById("letterSupervisor_letter").selectedIndex = 0;
+    document.getElementById("letterSupervisor_gender").selectedIndex = 0;
+    
+    // 10. العودة للصفحة الرئيسية
+    backToLogin();
+    
+  } catch (error) {
+    alert(`❌ خطأ في التسجيل: ${error.message}`);
+    console.error("تفاصيل الخطأ:", error);
+  }
+}
+
+function backToLogin() {
+  document.getElementById("letterSupervisorForm").style.display = "none";
+  document.getElementById("loginSection").style.display = "flex";
+}
+/* ----- التهيئة الأولية للتخزين المحلي ----- */
+function initializeStorage() {
+  if (!localStorage.getItem("username")) {
+    localStorage.setItem("username", "admin");
+    localStorage.setItem("password", "1234");
+  }
+  if (!localStorage.getItem("verify_user")) {
+    localStorage.setItem("verify_user", "verify");
+    localStorage.setItem("verify_pass", "9999");
+  }
+  if (!localStorage.getItem("letterSupervisors")) {
+    localStorage.setItem("letterSupervisors", "[]");
+  }
+  if (!localStorage.getItem("verifiedSupervisors")) {
+    localStorage.setItem("verifiedSupervisors", "{}");
+  }
+  if (!localStorage.getItem("announcements")) {
+    localStorage.setItem("announcements", "[]");
+  }
+  if (!localStorage.getItem("kafalaForms")) {
+    localStorage.setItem("kafalaForms", "[]");
+  }
+ if (!localStorage.getItem("staffAccounts")) {
+  localStorage.setItem("staffAccounts", JSON.stringify({
+    "madihah": "1111",
+    "samar": "2222", 
+    "lamia": "3333",
+    "hadeel": "4444",
+    "fai": "5555", // تمت إضافة الحساب الجديد
+    "mshrefa": "7777"
+  }));
+}
+}
+initializeStorage();
+
+/* ----- دوال تسجيل الدخول والمشرفات ----- */
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // دخول الأدمن
+  if (username === "admin" && password === "1234") {
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+    displayAnnouncements();
+    return;
+  }
+
+  // دخول التحقق
+  if (username === localStorage.getItem("verify_user") && 
+      password === localStorage.getItem("verify_pass")) {
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("verifyPanel").style.display = "block";
+    loadVerifyRequests();
+    return;
+  }
+
+  // دخول المشرفات
+  const staffAccounts = JSON.parse(localStorage.getItem("staffAccounts"));
+  if (staffAccounts[username] && staffAccounts[username] === password) {
+    if (username === "mshrefa") {
+      document.getElementById("loginSection").style.display = "none";
+      document.getElementById("letterSupervisorForm").style.display = "block";
+    } else {
+      showStaffPage(username);
+    }
+    return;
+  }
+
+  // دخول مشرفات الحروف المعتمدة
+  const verifiedSupervisors = JSON.parse(localStorage.getItem("verifiedSupervisors") || "{}");
+  if (verifiedSupervisors[username] && verifiedSupervisors[username].password === password) {
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("letterSupervisorPanel").style.display = "block";
+    document.getElementById("letterWelcome").textContent = `مرحباً، مشرفة حرف ${verifiedSupervisors[username].letter}`;
+    return;
+  }
+
+  alert("بيانات الدخول غير صحيحة");
+}
+
+function togglePassword() {
+  const pwd = document.getElementById("password");
+  pwd.type = pwd.type === "password" ? "text" : "password";
+}
+
+/* ----- دوال قسم التحقق ----- */
+function loadVerifyRequests() {
+  const container = document.getElementById("verifyList");
+  const requests = JSON.parse(localStorage.getItem("letterSupervisors") || []);
+  
+  container.innerHTML = requests.map((req, index) => `
+    <div style="border:1px solid #ddd; padding:15px; margin:10px 0; border-radius:8px;">
+      <p><strong>👤 المستخدم:</strong> ${req.username}</p>
+      <p><strong>🔠 الحرف:</strong> ${req.letter}</p>
+      <p><strong>👥 النوع:</strong> ${req.gender}</p>
+      <button onclick="approveRequest(${index})" style="background:#28a745; color:white; border:none; padding:8px 15px; border-radius:5px; margin:5px;">
+        ✅ موافقة
+      </button>
+      <button onclick="rejectRequest(${index})" style="background:#dc3545; color:white; border:none; padding:8px 15px; border-radius:5px; margin:5px;">
+        ❌ رفض
+      </button>
+    </div>
+  `).join("") || "<p style='text-align:center;'>لا توجد طلبات حالياً</p>";
+}
+
+function approveRequest(index) {
+  const requests = JSON.parse(localStorage.getItem("letterSupervisors"));
+  const approved = requests.splice(index, 1)[0];
+  
+  const approvedAccounts = JSON.parse(localStorage.getItem("verifiedSupervisors") || "{}");
+  approvedAccounts[approved.username] = {
+    password: approved.password,
+    letter: approved.letter,
+    gender: approved.gender
+  };
+  
+  const staffAccounts = JSON.parse(localStorage.getItem("staffAccounts"));
+  staffAccounts[approved.username] = approved.password;
+  
+  localStorage.setItem("verifiedSupervisors", JSON.stringify(approvedAccounts));
+  localStorage.setItem("letterSupervisors", JSON.stringify(requests));
+  localStorage.setItem("staffAccounts", JSON.stringify(staffAccounts));
+  
+  loadVerifyRequests();
+  alert("تم قبول المشرفة بنجاح وتم إنشاء حساب لها");
+}
+
+function rejectRequest(index) {
+  const requests = JSON.parse(localStorage.getItem("letterSupervisors"));
+  requests.splice(index, 1);
+  localStorage.setItem("letterSupervisors", JSON.stringify(requests));
+  loadVerifyRequests();
+}
+
+function updateVerifyLogin() {
+  const newUser = document.getElementById("verifyNewUsername").value.trim();
+  const newPass = document.getElementById("verifyNewPassword").value.trim();
+  
+  if (newUser && newPass) {
+    localStorage.setItem("verify_user", newUser);
+    localStorage.setItem("verify_pass", newPass);
+    alert("تم تحديث بيانات الدخول بنجاح");
+  } else {
+    alert("يجب تعبئة جميع الحقول");
+  }
+}
+
+/* ----- دوال المشرفات ----- */
+function showStaffPage(staffName) {
+  document.getElementById("loginSection").style.display = "none";
+  document.getElementById("staffPage").style.display = "block";
+  
+  const verifiedSupervisors = JSON.parse(localStorage.getItem("verifiedSupervisors") || "{}");
+  const supervisorData = verifiedSupervisors[staffName];
+  
+  // تحديد الحرف والجنس لكل مشرفة
+  let letter = null;
+  let gender = null;
+  
+  // الحسابات الأساسية
+  const staffConfig = {
+    "madihah": { letter: "ا", gender: "نساء" },
+    "fai": { letter: "ا", gender: "رجال" },
+    "hadeel": { letter: "ب", gender: "نساء" },
+    "samar": { letter: null, gender: null }, // تستلم كل النساء
+    "lamia": { letter: null, gender: null }  // تستلم كل النساء
+  };
+  
+  if (staffConfig[staffName]) {
+    letter = staffConfig[staffName].letter;
+    gender = staffConfig[staffName].gender;
+  } else if (supervisorData) {
+    letter = supervisorData.letter;
+    gender = supervisorData.gender;
+  }
+  
+  document.getElementById("staffNameTitle").textContent = letter 
+    ? `قسم حرف ${letter} (${gender})`
+    : `قسم ${staffName}`;
+
+  loadStaffForms(staffName, letter, gender);
+}
+
+function loadStaffForms(staffName, letter = null, gender = null) {
+  const allForms = JSON.parse(localStorage.getItem("kafalaForms") || []);
+  
+  // تصفية الاستمارات حسب الحرف والجنس إذا كان مشرفة حرف
+  const forms = letter 
+    ? allForms.filter(form => {
+        const firstLetter = form.name?.charAt(0); // الحرف الأول من اسم الكفيل
+        const formGender = form.gender; // جنس الكفيل (يجب إضافته في استمارة الكفالة)
+        
+        return firstLetter === letter && 
+               (!gender || formGender === gender);
+      })
+    : allForms;
+  
+  const container = document.getElementById("staffForms");
+  
+  container.innerHTML = forms.length ? forms.map((form, index) => `
+    <div style="border:1px solid #ddd; padding:15px; margin:10px 0; border-radius:8px;">
+      <p><strong>${index + 1} - ${form.name}</strong></p>
+      <p>📧 ${form.email} | ☎️ ${form.phone}</p>
+      <p>💼 ${form.job} | 🎓 ${form.degree}</p>
+      <p>👶 عدد الأيتام: ${form.orphans} | المدة: ${form.period}</p>
+      <p>🚻 الجنس: ${form.gender || 'غير محدد'}</p>
+    </div>
+  `).join("") : "<p>لا توجد استمارات حالياً</p>";
+}
+
+/* ----- دوال الإعلانات ----- */
+let announcements = JSON.parse(localStorage.getItem("announcements") || []);
+
+function addAnnouncement() {
+  const text = document.getElementById("newAnnouncement").value.trim();
+  if (!text) {
+    alert("يرجى إدخال نص الإعلان");
+    return;
+  }
+  
+  announcements.push(text);
+  localStorage.setItem("announcements", JSON.stringify(announcements));
+  document.getElementById("newAnnouncement").value = "";
+  displayAnnouncements();
+}
+
+function displayAnnouncements() {
+  const list = document.getElementById("announcementList");
+  list.innerHTML = announcements.map((text, index) => `
+    <div style="background:#d4f5dc; margin:10px; padding:15px; border-radius:8px;">
+      ${index + 1} - ${text}
+      <button onclick="deleteAnnouncement(${index})" style="float:left; background:red; color:white; border:none; border-radius:5px; padding:2px 8px;">
+        حذف
+      </button>
+    </div>
+  `).join("");
+}
+
+function deleteAnnouncement(index) {
+  announcements.splice(index, 1);
+  localStorage.setItem("announcements", JSON.stringify(announcements));
+  displayAnnouncements();
+}
+
+/* ----- دوال استمارة الكفالة ----- */
+function goToKafalaPage() {
+  document.getElementById("userPanel").style.display = "none";
+  document.getElementById("kafalaPage").style.display = "block";
+  
+  const select = document.getElementById("kafala_orphans");
+  if (select.options.length <= 1) {
+    for (let i = 1; i <= 100; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.text = `${i} يتيم`;
+      select.appendChild(option);
+    }
+  }
+}
+
+function submitKafala() {
+  const formData = {
+    name: document.getElementById("kafala_name").value,
+    email: document.getElementById("kafala_email").value,
+    phone: document.getElementById("kafala_phone").value,
+    phone2: document.getElementById("kafala_phone2").value,
+    job: document.getElementById("kafala_job").value,
+    degree: document.getElementById("kafala_degree").value,
+    date: document.getElementById("kafala_time").value,
+    orphans: document.getElementById("kafala_orphans").value,
+    period: document.getElementById("kafala_period").value,
+    gender: document.getElementById("kafala_gender").value // تمت إضافة هذا الحقل
+  };
+
+  const kafalas = JSON.parse(localStorage.getItem("kafalaForms") || []);
+  kafalas.push(formData);
+  localStorage.setItem("kafalaForms", JSON.stringify(kafalas));
+  
+  alert("تم تقديم الاستمارة بنجاح");
+  backToUser();
+}
+/* ----- دوال الواجهة العامة ----- */
+function showUserView() {
+  document.getElementById("loginSection").style.display = "none";
+  document.getElementById("userPanel").style.display = "block";
+  
+  const container = document.getElementById("userAnnouncements");
+  container.innerHTML = announcements.length ? 
+    announcements.map((text, index) => `<p>${index + 1} - ${text}</p>`).join("") : 
+    "<p>لا توجد إعلانات حالياً</p>";
+}
+</script>
+<!-- صفحة الموظف -->
+<div id="staffPage" style="display:none; padding: 20px;">
+  <h2 id="staffNameTitle">قسم الموظف</h2>
+
+  <div style="margin: 20px 0;">
+    <input type="text" id="searchInput" placeholder="ابحث عن اسم الكفيل" style="width: 80%; padding: 10px; border-radius: 8px; font-size: 16px;">
+    <button onclick="searchForms()">🔍</button>
+  </div>
+
+  <div id="staffForms" style="background-color: #f9f9f9; padding: 15px; border-radius: 10px;"></div>
+
+  <div class="edit-section">
+    <div class="edit-header"><i class="fa fa-user"></i><i class="fa fa-cog"></i> تغيير بيانات الدخول</div>
+    <input type="text" id="staffNewUsername" placeholder="اسم المستخدم الجديد">
+    <input type="password" id="staffNewPassword" placeholder="كلمة المرور الجديدة">
+    <button onclick="updateStaffLogin()">تحديث البيانات</button>
+  </div>
+</div>
+
+</body>
+</html>
